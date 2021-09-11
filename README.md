@@ -1,18 +1,18 @@
 # Overview
 
-This application uses the following GCP components to deploy a stack notifier for your cloud build jobs
+This application uses the following GCP components to deploy a slack notifier for your cloud build jobs
 1. Pub / Sub Topics
 2. Cloud Functions using Python Framework
 
 ![alt text](assets/image.png?raw=true)
 
-## 1. Retrieve Slack Wrbhook URL
+## 1. Retrieve Slack Webhook URL
 Before you start, ensure that you have a slack webhook available. The cloud function which will be deployed by this repository will send POST requests to the slack webhook you configure within `main.py`
 
 For more information on how to retrieve the slack webhook, visit this <a href="https://api.slack.com/messaging/webhooks">link</a>
 
 ## 2. Enable GCP APIs 
-Your application will use Cloud Functions, Pub/Sub and Cloud Build 
+Your application will use Cloud Functions, Pub/Sub and Cloud Build.
 Ensure that you turn on APIs for these services <a href="https://console.cloud.google.com/flows/enableapi?apiid=pubsub.googleapis.com,cloudfunctions,cloudbuild.googleapis.com&redirect=https://cloud.google.com/functions/quickstart">here</a>.
 
 
@@ -24,10 +24,11 @@ Use `cloud-builds` exactly as topic name as it seems to be a default provided by
 https://cloud.google.com/build/docs/subscribe-build-notifications
 
 ## 4. Create a service account
-This service account will encapsulate the permissions cloud functions app will require.
+This service account will encapsulate the permissions your cloud functions app will require.
 Give this service account the following permissions
 - Pub/Sub Viewer 
 - Cloud Functions Invoker
+
 Once completed, keep track of the email assigned to this service account, it will have a structure similar to 
 cloudfunctions-slack-notifier@<projectid>.iam.gserviceaccount.com
 
