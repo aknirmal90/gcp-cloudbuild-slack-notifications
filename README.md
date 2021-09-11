@@ -4,7 +4,7 @@ This application uses the following GCP components to deploy a stack notifier fo
 1. Pub / Sub Topics
 2. Cloud Functions using Python Framework
 
-![alt text](https://github.com/aknirmal90/gcp-cloudbuild-slack-notifications/blob/master/assets/image.png?raw=true)
+![alt text](https://github.com/aknirmal90/gcp-cloudbuild-slack-notifications/tree/main/assets/image.png?raw=true)
 
 ## 1. Retrieve Slack Wrbhook URL
 Before you start, ensure that you have a slack webhook available. The cloud function which will be deployed by this repository will send POST requests to the slack webhook you configure within `main.py`
