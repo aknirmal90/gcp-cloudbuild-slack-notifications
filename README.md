@@ -26,11 +26,11 @@ https://cloud.google.com/build/docs/subscribe-build-notifications
 ## 4. Create a service account
 This service account will encapsulate the permissions your cloud functions app will require.
 Give this service account the following permissions
-- Pub/Sub Viewer 
+- Pub/Sub Subscriber 
 - Cloud Functions Invoker
 
 Once completed, keep track of the email assigned to this service account, it will have a structure similar to 
-cloudfunctions-slack-notifier@<projectid>.iam.gserviceaccount.com
+`cloudfunctions-slack-notifier@<projectid>.iam.gserviceaccount.com`
 
 ## 5. Deploy the cloud function
 Update the webhook url on `main.py` to reflect the URL you would like to send notifications to and run
@@ -49,4 +49,4 @@ gcloud functions deploy cloud_build_slack_notification \
 2. <a href="https://cloud.google.com/build/docs/subscribe-build-notifications">Subscribing to build notifications</a>
 3. <a href="https://api.slack.com/messaging/webhooks">Getting Started with Slack Webhooks</a>
 4. <a href="https://github.com/GoogleCloudPlatform/functions-framework-python">Python Functions Framework</a>
-5. <a href="https://cloud.google.com/build/docs/api/reference/rest/v1/projects.builds">Cloud Build Notifications Schema</a>a>
+5. <a href="https://cloud.google.com/build/docs/api/reference/rest/v1/projects.builds">Cloud Build Notifications Schema</a>

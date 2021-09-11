@@ -55,7 +55,9 @@ def _build_slack_attachment(
     # elif status in (BuildStatus.QUEUED, BuildStatus.WORKING):
     elif status == BuildStatus.QUEUED:
         color = "#808080"
-    elif status != BuildStatus.WORKING:
+    elif status == BuildStatus.WORKING:
+        return ""
+    else:
         raise ValueError("Unknown Cloud Build Status")
 
     payload = {
